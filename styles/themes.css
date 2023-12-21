@@ -8,51 +8,75 @@
 :root.theme-dark {
     --accent-background-color: #000000;
     --accent-font-color: #00CC14;
-    --background-gradient-color-one: #000000;
-    --background-gradient-color-two: rgb(0 0 0 / 0.6);
-    --background-gradient-color-three: #007f0c;
-    --background-gradient-color-four: #004306;
+    --gradient-main-color: #000000;
+    --gradient-inter-color: rgb(0 0 0 / 0.6);
+    --gradient-background-color-primary: #007f0c;
+    --gradient-background-color-final: #004306;
     --contour-heart: #00CC14;
     --main-body: red;
     --font-weight-header: 785;
     --font-weight-content: 465;
     --button__text: var(--accent-font-color);
     --background-image:
-        repeating-linear-gradient(var(--background-gradient-color-one) 0 2px, var(--background-gradient-color-two) 2px 4px),
-        repeating-linear-gradient(90deg, var(--background-gradient-color-one) 0 2px, var(--background-gradient-color-two) 2px 4px),
-        linear-gradient(to bottom, var(--background-gradient-color-three), var(--background-gradient-color-four));
+        repeating-linear-gradient(var(--gradient-main-color) 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(90deg, var(--gradient-main-color) 0 2px, transparent 2px 4px),
+        linear-gradient(to bottom, var(--gradient-background-color-primary), var(--gradient-background-color-final));
 }
 
 :root.theme-light {
     --accent-background-color: #FFFFFF;
     --accent-font-color: #000000;
-    --background-gradient-color-one: #d3d3d3;
-    --background-gradient-color-two: rgb(211 211 211 / 0.6);
-    --background-gradient-color-three: #e7e7e7;
-    --background-gradient-color-four: #1a1a1a;
+    --gradient-main-color: #d3d3d3;
+    --gradient-inter-color: rgb(211 211 211 / 0.6);
+    --gradient-background-color-primary: #e7e7e7;
+    --gradient-background-color-final: #1a1a1a;
     --contour-heart: #000000;
     --main-body: red;
     --font-weight-header: 700;
     --font-weight-content: 400;
     --button__text: var(--accent-background-color);
+    --background-image:
+        repeating-linear-gradient(var(--gradient-main-color) 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(90deg, var(--gradient-main-color) 0 2px, transparent 2px 4px),
+        linear-gradient(to bottom, var(--gradient-background-color-primary) 0.01%, var(--gradient-background-color-final));
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --accent-background-color: #000000;
         --accent-font-color: #00CC14;
-        --background-gradient-color-one: #000000;
-        --background-gradient-color-two: rgb(0 0 0 / 0.6);
-        --background-gradient-color-three: #007f0c;
-        --background-gradient-color-four: #004306;
+        --gradient-main-color: #000000;
+        --gradient-inter-color: rgb(0 0 0 / 0.6);
+        --gradient-background-color-primary: #007f0c;
+        --gradient-background-color-final: #004306;
         --contour-heart: #00CC14;
         --main-body: red;
         --button__text: var(--accent-font-color);
         --font-weight-header: 785;
         --font-weight-content: 465;
         --background-image:
-            repeating-linear-gradient(var(--background-gradient-color-one) 0 2px, var(--background-gradient-color-two) 2px 4px),
-            repeating-linear-gradient(90deg, var(--background-gradient-color-one) 0 2px, var(--background-gradient-color-two) 2px 4px),
-            linear-gradient(to bottom, var(--background-gradient-color-three), var(--background-gradient-color-four));
+            repeating-linear-gradient(var(--gradient-main-color) 0 2px, transparent 2px 4px),
+            repeating-linear-gradient(90deg, var(--gradient-main-color) 0 2px, transparent 2px 4px),
+            linear-gradient(to bottom, var(--gradient-background-color-primary), var(--gradient-background-color-final));
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --accent-background-color: #FFFFFF;
+        --accent-font-color: #000000;
+        --gradient-main-color: #d3d3d3;
+        --gradient-inter-color: rgb(211 211 211 / 0.6);
+        --gradient-background-color-primary: #e7e7e7;
+        --gradient-background-color-final: #1a1a1a;
+        --contour-heart: #000000;
+        --main-body: red;
+        --font-weight-header: 700;
+        --font-weight-content: 400;
+        --button__text: var(--accent-background-color);
+        --background-image:
+            repeating-linear-gradient(var(--gradient-main-color) 0 2px, transparent 2px 4px),
+            repeating-linear-gradient(90deg, var(--gradient-main-color) 0 2px, transparent 2px 4px),
+            linear-gradient(to bottom, var(--gradient-background-color-primary) 0.01%, var(--gradient-background-color-final));
     }
 }
