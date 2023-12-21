@@ -111,6 +111,18 @@
   transform-origin: 0 0;
 }
 
+.theme-menu__button:hover {
+  cursor: pointer;
+}
+
+.header__logo-title:hover {
+  cursor: default;
+}
+
+.header__logo-title {
+  pointer-events: none
+}
+
 .theme-menu__button:disabled {
   opacity: 60%;
   pointer-events: none;
