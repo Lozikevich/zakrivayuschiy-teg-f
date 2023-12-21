@@ -59,3 +59,8 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+dialog,
+form {
+  padding: 0;
+}

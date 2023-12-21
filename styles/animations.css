@@ -13,17 +13,6 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-.theme-menu__button {
-  opacity: 100%;
-  transition: opacity 0.3s ease;
-  animation-fill-mode: forwards;
-  transform-origin: 0 0;
-}
-
-.theme-menu__button:disabled::before {
-  animation: choosing 0.5s ease-in-out infinite alternate;
-}
-
 @keyframes choosing {
   0% {
     left: -20px;
@@ -32,40 +21,6 @@
   100% {
     left: -16px;
   }
-}
-
-.theme-menu__button::after {
-  transform-origin: 0 0;
-  animation-iteration-count: 1;
-  transition: transform 0.3s ease;
-  animation-fill-mode: forwards;
-  transform: scaleX(0);
-}
-
-.theme-menu__button:focus-visible::after {
-  transform: scaleX(1);
-}
-
-.card__icon-button {
-  outline: 2px solid transparent;
-  transition: outline 0.3s ease;
-}
-
-.card__button {
-  box-shadow: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.card__button::before {
-  transform-origin: 0 0;
-  animation-iteration-count: 1;
-  transition: transform 0.5s ease-in-out;
-  animation-fill-mode: forwards;
-  transform: scaleX(0);
-}
-
-.card__button:hover::before {
-  transform: scaleX(1);
 }
 
 .core {

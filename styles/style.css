@@ -43,7 +43,6 @@
   min-inline-size: 320px;
   max-inline-size: 700px;
   min-block-size: 327px;
-  max-block-size: 368px;
   width: 100%;
   box-sizing: border-box;
   padding-top: clamp(7.5rem, 6.3462rem + 4.9231vw, 8.5rem);
@@ -106,6 +105,10 @@
   text-align: center;
   text-transform: uppercase;
   position: relative;
+  opacity: 100%;
+  transition: opacity 0.3s ease;
+  animation-fill-mode: forwards;
+  transform-origin: 0 0;
 }
 
 .theme-menu__button:disabled {
@@ -118,6 +121,7 @@
   position: absolute;
   left: -20px;
   top: 0;
+  animation: choosing 0.5s ease-in-out infinite alternate;
 }
 
 .theme-menu__button:focus {
@@ -139,6 +143,15 @@
   block-size: 100%;
   left: 0;
   top: 2px;
+  transform-origin: 0 0;
+  animation-iteration-count: 1;
+  transition: transform 0.3s ease;
+  animation-fill-mode: forwards;
+  transform: scaleX(0);
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .main__content {
@@ -240,7 +253,7 @@
 .main__content-post-content-text {
   font-size: 18px;
   font-style: normal;
-  font-weight: var(--font-weight-content);
+  font-variation-settings: "wght" var(--font-weight-content);
   line-height: 21px;
   text-align: left;
 }
@@ -257,6 +270,8 @@
   box-sizing: border-box;
   border: none;
   background-color: inherit;
+  outline: 2px solid transparent;
+  transition: outline 0.3s ease;
 }
 
 .like-icon {
@@ -275,6 +290,8 @@
   background-color: inherit;
   position: relative;
   width: fit-content;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
 }
 
 .save-button {
@@ -298,6 +315,15 @@
   block-size: 100%;
   inline-size: 100%;
   background-color: var(--accent-font-color);
+  transform-origin: 0 0;
+  animation-iteration-count: 1;
+  transition: transform 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  transform: scaleX(0);
+}
+
+.card__button:hover::before {
+  transform: scaleX(1);
 }
 
 .button__text {
@@ -334,21 +360,7 @@
   z-index: 1;
 }
 
-@media (width <= 375px) {
-  .save-button {
-    flex-direction: column;
-    row-gap: 8px;
-  }
 
-  .save-icon {
-    height: 28px;
-    width: 28px;
-  }
-
-  .dialog {
-    padding: 42px 30px;
-  }
-}
 
 .filter__blure {
   filter: blur(0.1rem);
@@ -388,23 +400,26 @@
 }
 
 #dialog-id {
-  padding: 0;
-  max-inline-size: 353px;
-  min-inline-size: 341px;
-  border: 2px solid var(--accent-font-color);
   background-color: var(--accent-background-color);
   color: var(--accent-font-colorfont);
+  width: 100%;
+  padding-block: 30px;
+  padding-inline: 30px;
+  min-width: 341px;
+  max-width: 357px;
+  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+  border: 2px solid var(--accent-font-color);
 }
 
 .dialog {
-  padding: 30px;
   width: 100%;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 30px;
 }
-
+  
 .dialog__header {
   display: flex;
   flex-direction: row;
@@ -428,7 +443,24 @@
 }
 
 .dialog__button {
-  padding: 10px 130px;
+  padding: 10px clamp(7.031rem, 5.733rem + 5.538vw, 8.156rem);
+  box-sizing: border-box;
+}
+
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  .save-icon {
+    height: 28px;
+    width: 28px;
+  }
+
+  #dialog-id {
+    padding-inline: 40px;
+  }
 }
 
 /** { outline: 1px solid yellow; }*/
